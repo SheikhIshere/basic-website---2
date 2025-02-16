@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <script src="../config.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="bg-sky-50">    
+  <nav class="bg-gradient-to-r from-pink-500 to-rose-500 py-4 px-6 flex items-center justify-between rounded-bl-[30px] shadow-md">
+    <!-- Logo -->
+    <div class="flex items-center">
+        <a href="#" class="flex items-center space-x-3">
+            <img src="../resource/logo.png" class="w-16 rounded-full ring-4 ring-pink-300 transition duration-200 hover:scale-105 hover:ring-pink-200" alt="logo">
+            <p class="text-white text-xl font-semibold">DeepLearning</p>
+        </a>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="flex items-center w-full sm:w-3/5 md:w-2/5 relative">
+        <input type="text" class="hidden sm:block w-full h-12 sm:h-14 px-4 text-gray-800 placeholder-gray-400 bg-white rounded-full border-2 border-rose-300 focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Search...">
+
+        <button class="absolute right-2 w-10 h-10 flex items-center justify-center text-white bg-pink-500 hover:bg-pink-400 rounded-full transition duration-200">
+            <i class="fas fa-search text-lg"></i>
+        </button>
+      </div>
+      
+
+
+    <!-- Menu Items -->
+    <div class="flex items-center ">
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex items-center space-x-10 ml-auto px-7"> 
+            <li><a href="./page-defult.html" class="text-white text-lg hover:text-rose-300 transition duration-200">Home</a></li>
+            <li><a href="./page-defult.html" class="text-white text-lg hover:text-rose-300 transition duration-200">About</a></li>            
+            <li><a href="./page-defult.html" class="text-white text-lg hover:text-rose-300 transition duration-200">Contact</a></li>
+        </ul>
+    
+        <!-- Mobile Menu Button -->
+        <button class="ml-6 text-white text-3xl hover:text-rose-300 transition duration-200 relative z-100 top-[-15px] left-[-18px]" onclick="toggleMenu()">
+            <i id="menu-icon" class='bx bx-menu absolute'></i>
+            <i id="close-icon" class="bx bx-x absolute hidden top-0 left-0"></i>
+
+        </button>
+        
+        
+    
+        <!-- Sliding Menu Container -->
+        <div id="mobile-menu" class="fixed top-0 right-0 h-screen w-64 bg-pink-500 transform transition-transform duration-300 translate-x-full z-40">
+            <div class="p-6">
+                <!-- Mobile Only Links -->
+                <ul class="md:hidden space-y-4">
+                    <li><a href="./page-defult.html" class="text-white hover:text-gray-900 block py-2 hover:bg-blue-500 rounded-r-full border-b-2 border-transparent hover:border-blue-500 transition duration-200 pl-2">Home</a></li>
+                    <li><a href="./page-defult.html" class="text-white hover:text-gray-900 block py-2 hover:bg-blue-500 rounded-r-full border-b-2 border-transparent hover:border-blue-500 transition duration-200 pl-2">About</a></li>
+                    <li><a href="./page-defult.html" class="text-white hover:text-gray-900 block py-2 hover:bg-blue-500 rounded-r-full border-b-2 border-transparent hover:border-blue-500 transition duration-200 pl-2">Contact</a></li>
+                </ul>
+        
+                <!-- Additional Links -->
+                <ul class="space-y-4 mt-4">
+                    <li>
+                        <a href="./page-defult.html" class="text-white hover:text-gray-900 block py-2 hover:bg-blue-500 rounded-r-full border-b-2 border-transparent hover:border-blue-500 transition duration-200 pl-2">
+                          Blogs
+                        </a>
+                    </li>
+                    <li><a href="./page-defult.html" class="text-white hover:text-gray-900 block py-2 hover:bg-blue-500 rounded-r-full border-b-2 border-transparent hover:border-blue-500 transition duration-200 pl-2">Projects</a></li>
+                    <li><a href="./page-defult.html" class="text-white hover:text-gray-900 block py-2 hover:bg-blue-500 rounded-r-full border-b-2 border-transparent hover:border-blue-500 transition duration-200 pl-2">More</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    
+    
+    
+</nav>
+
+</body>
+</html>

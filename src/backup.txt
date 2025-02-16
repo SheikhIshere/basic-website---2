@@ -1,0 +1,35 @@
+---- navigation bar----
+ <nav class="bg-radial -65 from-pink-500 to-rose-500 py-4 flex justify-center text-center rounded-bl-[30px]">
+    <!-- logo -->
+    <div class=" flex items-center">
+      <a href="#" class="flex items-center">
+        <img src="../resource/logo.png" class="w-20 mx-0 my-0 rounded-full ring-4 ring-pink-300 transition hover:scale-103 hover:ring-pink-200" alt="logo">
+        <p class="text-white font-bold mx-3 my-6">DeepLearning</p>
+      </a>
+    </div>
+    <!-- search bar -->
+    <div class="flex items-center w-2/5">
+      <input type="text" class="w-full h-10 px-4 text-gray-700 placeholder-white rounded-full focus:outline-none focus:ring-pink-300 border-2 border-rose-200" placeholder="Search...">
+      <button class="text-white px-4 py-2 rounded-full bg-pink-500 border-2 border-transparent hover:bg-pink-400 hover:border-2 hover:border-pink-300 mx-2">
+        
+
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+
+    <!-- menu items -->
+    <div class="flex items-center justify-end ">
+      <ul class="flex items-center space-x-3">
+        <li><a href="#" class="text-white hover:text-rose-300">Home</a></li>
+        <li><a href="#" class="text-white hover:text-rose-300">About</a></li>
+        <li><a href="#" class="text-white hover:text-rose-300">Courses</a></li>
+        <li><a href="#" class="text-white hover:text-rose-300">Blog</a></li>
+        <li><a href="#" class="text-white hover:text-rose-300">Contact</a></li> 
+        <li><a href="#" class="text-white hover:text-rose-300"></a><i class="fa-solid fa-bars text-white text-3xl"></i></li>
+        
+      </ul>
+    </div>
+    
+  </nav>
+
+  
