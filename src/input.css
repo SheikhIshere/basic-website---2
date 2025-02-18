@@ -1,1 +1,303 @@
 @import "tailwindcss";
+
+
+
+#close-icon{
+    display: none;
+  }
+  #slider {
+    position: relative;
+    background-image: url('../resource/product-1-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Ensures no repetition */
+    background-attachment:fixed; /* Keeps the background image fixed during scroll */
+    width: 100%;
+    height: 70vh; /* Ensure this height fits your layout */    
+}
+
+
+#slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    filter: blur(3px);
+    z-index: 0;
+}
+
+#slider::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* Adjust fade height as needed */
+    
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes glow {
+  0% {
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+  }
+  50% {
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+  }
+  100% {
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+  }
+}
+
+@keyframes glow-green {
+  0% {
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+  }
+  50% {
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
+  }
+  100% {
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+  }
+}
+
+.glowing {
+  animation: glow 1.5s infinite alternate;
+}
+
+.glowing-green {
+  animation: glow-green 1.5s infinite alternate;
+}
+
+
+
+/* Partner Section */
+#partner {
+  position: relative;
+  width: 100%;
+  height:automatic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Background Blur Effect */
+#partner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../resource/review-bannner.jpg') center/cover no-repeat;
+  filter: blur(8px);
+  transform: scale(1.1); /* Prevents edge artifacts from blur */
+  z-index: 0;
+}
+
+/* Partner Logo Styling */
+.partner-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  padding: 5px;
+  transition: transform 0.3s ease, outline-offset 0.3s ease;
+  animation: glowing-ring 3s infinite alternate ease-in-out;
+}
+
+/* Hover Effect - Scale Up */
+.partner-logo:hover {
+  transform: scale(1.1);
+  outline-offset: 4px;
+  box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.6);
+}
+
+/* Animated Glowing Ring */
+@keyframes glowing-ring {
+  0% {
+    outline-color: red;
+    box-shadow: 0 0 10px red;
+  }
+  33% {
+    outline-color: purple;
+    box-shadow: 0 0 10px purple;
+  }
+  66% {
+    outline-color: pink;
+    box-shadow: 0 0 10px pink;
+  }
+  100% {
+    outline-color: red;
+    box-shadow: 0 0 10px red;
+  }
+}
+
+
+
+
+
+
+
+
+/* card */
+/* Container Styling for Title Card */
+/* Title Card Container */
+#title-card {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;  
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+}
+
+/* Blurred Dark Overlay */
+#title-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+/* Custom Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeInDown {
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Slow Bounce Animation for the Button */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-bounce-slow {
+  animation: bounce 2s infinite;
+}
+
+
+
+
+
+
+
+/* why this block is conflecting all css avobe */
+/* Apply styles to all skill cards */
+.skill-card {
+  position: relative;
+  border: 2px solid transparent; /* Initial transparent border */
+  border-radius: 50%; /* Makes the ring circular */
+  animation: skillGlow 3s infinite alternate; /* Unique animation */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  padding: 1rem;
+}
+
+/* Unique glowing animation */
+@keyframes skillGlow {
+  0% {
+    border-color: rgba(0, 123, 255, 0.5); /* Light blue */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5), 0 0 20px rgba(0, 123, 255, 0.5);
+  }
+  50% {
+    border-color: rgba(0, 86, 179, 0.8); /* Medium blue */
+    box-shadow: 0 0 20px rgba(0, 86, 179, 0.8), 0 0 40px rgba(0, 86, 179, 0.8);
+  }
+  100% {
+    border-color: rgba(0, 51, 102, 1); /* Dark blue */
+    box-shadow: 0 0 30px rgba(0, 51, 102, 1), 0 0 60px rgba(0, 51, 102, 1);
+  }
+}
+
+/* Hover Effect */
+.skill-card:hover {
+  animation: skillGlow 1s infinite alternate;
+  transform: scale(1.1);
+}
+
+/* Image inside skill card */
+.skill-card img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+
+
+
+
+/* new  */
+
+@keyframes fadeSlideUp {
+  0% {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.animated-box {
+  animation: fadeSlideUp 1s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animated-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+

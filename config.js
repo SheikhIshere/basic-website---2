@@ -13,8 +13,36 @@ function toggleMenu() {
     } else {
         menuIcon.style.display = "none";    // Hide menu icon
         closeIcon.style.display = "inline"; // Show close icon
+    }    
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const text = "Skilled at";
+    let index = 1; // Start from index 1, because 'S' is always shown
+    let isDeleting = false;
+    const typingElement = document.getElementById("typing-text");
+
+    function typeText() {
+        if (!isDeleting) {
+            // Display typed text
+            typingElement.innerHTML = text.substring(0, index);
+            index++;
+            if (index > text.length) {
+                isDeleting = true;
+                setTimeout(typeText, 1000); // Pause before deleting
+                return;
+            }
+        } else {
+            // Keep the first character constant
+            typingElement.innerHTML = text.substring(0, index);
+            index--;
+            if (index < 2) { // Ensure the first character ('S') remains
+                isDeleting = false;
+                setTimeout(typeText, 500); // Pause before retyping
+                return;
+            }
+        }
+        setTimeout(typeText, isDeleting ? 100 : 150); // Typing speed
     }
 
-    // Lock body scroll when menu is open (optional)
-    document.body.classList.toggle("overflow-hidden", !mobileMenu.classList.contains("translate-x-full"));
-}
+    typeText(); // Start animation
+});
